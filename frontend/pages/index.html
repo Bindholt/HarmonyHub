@@ -13,6 +13,7 @@
         <div class="header-grid">
             <input type="search" id="search" placeholder="Search for Artist" />
             <img id="logo" src="../images/HarmonyHub.png" alt="">
+            <input type="button" id="show-post-artist-dialog" value ="Post new artist"/>
         </div>
     </header>
     <main>
@@ -76,28 +77,28 @@
 
         <!--Post artist dialog-->
         <dialog id="post-artist-dialog">
-            <button id="update-dialog-close-button" class="close-button">X</button>
-            <h2>Update Artist</h2>
-            <form id="update-artist-form">
-                <label for="update-artist-name">Name:</label>
-                <input type="text" id="update-artist-name" name="name" required />
-                <label for="update-artist-genres">Genres:</label>
-                <input type="text" id="update-artist-genres" name="genres" required />
-                <label for="update-artist-birthdate">Birthdate:</label>
-                <input type="date" id="update-artist-birthdate" name="birthdate" min="1900-01-01" required />
-                <label for="update-artist-active-since">Active since:</label>
-                <input type="date" id="update-artist-active-since" name="activeSince" min="1900-01-01" required />
-                <label for="update-artist-labels">Labels:</label>
-                <input type="text" id="update-artist-labels" name="labels" required />
-                <label for="update-artist-website">Website:</label>
-                <input type="text" id="update-artist-website" name="website" required />
-                <label for="update-artist-image">Image:</label>
-                <input type="text" id="update-artist-image" name="image" required />
-                <label for="update-artist-description">Description:</label>
-                <textarea id="update-artist-description" name="description" required></textarea>
-                <input type="text" id="update-artist-id" name="id" style="display:none">
+            <button id="post-dialog-close-button" class="close-button">X</button>
+            <h2>Post New Artist</h2>
+            <form id="post-artist-form">
+                <label for="post-artist-name">Name:</label>
+                <input type="text" id="post-artist-name" name="name" required />
+                <label for="post-artist-genres">Genres:</label>
+                <input type="text" id="post-artist-genres" name="genres" required />
+                <label for="post-artist-birthdate">Birthdate:</label>
+                <input type="date" id="post-artist-birthdate" name="birthdate" min="1900-01-01" required />
+                <label for="post-artist-active-since">Active since:</label>
+                <input type="date" id="post-artist-active-since" name="activeSince" min="1900-01-01" required />
+                <label for="post-artist-labels">Labels:</label>
+                <input type="text" id="post-artist-labels" name="labels" required />
+                <label for="post-artist-website">Website:</label>
+                <input type="text" id="post-artist-website" name="website" required />
+                <label for="post-artist-image">Image:</label>
+                <input type="text" id="post-artist-image" name="image" required />
+                <label for="post-artist-description">Description:</label>
+                <textarea id="post-artist-description" name="description" required></textarea>
+                <input type="text" id="post-artist-id" name="id" style="display:none">
                 <div class="user-btns">
-                    <input type="submit" id="update-artist-btn-submit" value="Update artist" />
+                    <input type="submit" id="post-artist-btn-submit" value="Post artist" />
                     <input type="reset" value="Clear form" />
                 </div>
             </form>
