@@ -1,4 +1,5 @@
 import { handleUpdateArtist } from "./submit.js";
+import { setDisplayDialogEventListeners, setUpdateDialogEventListeners } from "./event-listeners.js";
 
 export function displayArtistsGrid(artistsArray) {
     document.querySelector("#artists-grid").innerHTML = "";
@@ -57,17 +58,4 @@ function closeAllDialogs() {
     document.querySelector("#display-artist-dialog").close();
     // document.querySelector("#display-artist-dialog").close();
     document.querySelector("#update-artist-dialog").close();
-}
-
-//refactor to handleEventlisteners.js?
-function setDisplayDialogEventListeners(artist) {
-    //add close dialog button and delete button eventlisteners
-    document.querySelector("#show-update-dialog-btn").addEventListener("mouseup", () => {
-        showUpdateArtistDialog(artist);
-    });
-}
-
-function setUpdateDialogEventListeners(id) {
-    //add close dialog button
-    document.querySelector("#update-artist-form").addEventListener("submit", handleUpdateArtist)
 }

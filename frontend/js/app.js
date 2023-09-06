@@ -14,6 +14,4 @@ async function handleDisplayArtistsGrid() {
     displayArtistsGrid(artists);
 }
 
-function setEventListeners() {
 
-}

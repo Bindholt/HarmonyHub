@@ -1,6 +1,6 @@
 import { displayArtistsGrid } from "./display.js";
 import { updateArtist } from "./rest-services.js";
-import { showToastMessage } from "./toastmessages.js";
+import { showToastMessage } from "./toast-messages.js";
 
 export async function handleUpdateArtist(event) {
     event.preventDefault();
