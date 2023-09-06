@@ -1,4 +1,4 @@
-import { setDisplayDialogEventListeners, setUpdateDialogEventListeners } from "./event-listeners.js";
+import { setDisplayDialogEventListeners } from "./event-listeners.js";
 
 export function displayArtistsGrid(artistsArray) {
     document.querySelector("#artists-grid").innerHTML = "";
@@ -19,6 +19,7 @@ export function displayArtistsGrid(artistsArray) {
 }
 
 function showDisplayArtistDialog(artist) {
+    closeAllDialogs();
     const artistDialog = document.querySelector("#display-artist-dialog");
     document.querySelector("#dialog-name").innerHTML = artist.name;
     document.querySelector("#dialog-genre").innerHTML = artist.genres;
@@ -49,12 +50,17 @@ export function showUpdateArtistDialog(artist) {
     document.querySelector("#update-artist-description").value = artist.shortDescription;
     document.querySelector("#update-artist-id").value = artist.id;
 
-    setUpdateDialogEventListeners(artist.id);
     updateDialog.showModal();
 }
 
-function closeAllDialogs() {
+export function showPostArtistDialog() {
+    closeAllDialogs();
+    const postDialog = document.querySelector("#post-artist-dialog");
+
+}
+
+export function closeAllDialogs() {
     document.querySelector("#display-artist-dialog").close();
-    // document.querySelector("#display-artist-dialog").close();
+    document.querySelector("#post-artist-dialog").close();
     document.querySelector("#update-artist-dialog").close();
 }

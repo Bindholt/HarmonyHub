@@ -196,6 +196,28 @@ dialog{
     gap:5em;
 }
 
+/* ---- POST DIALOG ---- */
+
+#post-artist-dialog {
+    width: 20em;
+}
+
+#post-artist-dialog h2{
+    text-align: center;
+}
+
+#post-artist-form {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#post-artist-form input {
+    width: 10em;
+}
+
+#post-artist-dialog .user-btns {
+    gap:5em;
+}
 
 /* ---- DIALOGS ----- */
 

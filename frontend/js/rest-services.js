@@ -42,3 +42,16 @@ export async function updateArtist(artist) {
     return response;
 }
 
+export async function postArtist(artist) {
+    const uri = `artists`;
+    const options = {
+        method: "POST",
+        headers,
+        body: artist,
+    };
+
+    const response = await fetch(endpoint + uri, options);
+
+    return response;
+}
+
