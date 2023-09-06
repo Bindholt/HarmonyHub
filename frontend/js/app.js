@@ -1,5 +1,6 @@
 import { getArtists } from "./rest-services.js";
 import { displayArtistsGrid } from "./display.js";
+import { setEventListeners } from "./event-listeners.js";
 
 window.addEventListener("load", init);
 

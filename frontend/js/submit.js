@@ -19,8 +19,6 @@ export async function handleUpdateArtist(event) {
         shortDescription: form.description.value,
         favorite:false,
     }
-
-    console.log(JSON.stringify(artistData, null, 2));
     const response = await updateArtist(JSON.stringify(artistData, null, 2));
     
     if (response.ok) {

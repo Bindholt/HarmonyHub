@@ -1,3 +1,6 @@
+import { showUpdateArtistDialog } from "./display.js";
+import { handleUpdateArtist } from "./submit.js";
+
 export function setEventListeners() {
 
 }

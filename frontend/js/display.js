@@ -1,4 +1,3 @@
-import { handleUpdateArtist } from "./submit.js";
 import { setDisplayDialogEventListeners, setUpdateDialogEventListeners } from "./event-listeners.js";
 
 export function displayArtistsGrid(artistsArray) {
@@ -36,7 +35,7 @@ function showDisplayArtistDialog(artist) {
     artistDialog.showModal();
 }
 
-function showUpdateArtistDialog(artist) {
+export function showUpdateArtistDialog(artist) {
     closeAllDialogs();
     const updateDialog = document.querySelector("#update-artist-dialog");
     document.querySelector("#update-artist-name").value = artist.name;
