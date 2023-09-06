@@ -251,3 +251,32 @@ dialog{
 .close-button:hover {
   background-color: rgb(70, 28, 28);
 } 
+
+
+/* ========== toast messages ========== */
+#toast-container {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    display: grid;
+    grid-template-columns: auto;
+    z-index: 99999;
+}
+
+.toast {
+    display: inline-block;
+    padding: 1em 2em;
+    margin-bottom: 0;
+    color: white;
+    border-radius: 0.5em;
+    font-size: 1.5em;
+    pointer-events: none;
+}
+
+.toast.success {
+    background-color: #2ecc71;
+}
+
+.toast.error {
+    background-color: #e74c3c;
+}

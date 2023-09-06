@@ -48,7 +48,7 @@ app.post("/artists", async (req, res) => {
       
       res.json(jsonFile);
     } else {
-      res.status(404).json({error: "Artist already exists"});
+      res.status(409).json({error: "Artist already exists"});
     }
     
 });
