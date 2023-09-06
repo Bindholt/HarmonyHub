@@ -20,30 +20,38 @@ header {
 
 /* ----- HEADER ----- */
 #search {
-    width: 18em;
+    width: 15em;
     height: 3em;
     border-radius: 1.5em;
     padding-left: 1em;
-    margin-left: 1em;
+    margin: 1em 0 0 1em;
 }
 
 #logo {
     width: 10em;
-    justify-self: center;
+    margin-left: 5em;
 }
 
 .header-grid {
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0.7fr 1fr 1fr 1fr;
     align-items: center;
+    margin-left: 0;
+}
+
+#sorting-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: center;
 }
 
 .header-grid input[type="button"] {
     background-color: rgb(81, 81, 81);
     color: rgb(230, 230, 230);
     padding:0.2em 3em 0.2em 3em;
-    margin-left: 10em;
     width: 15em;
+    margin: 1em 0 0 5em;
     border: 0;
     border-radius: 1em;
     box-shadow: 2px 2px 2px 2px rgb(81, 81, 81);
@@ -70,7 +78,7 @@ header {
     vertical-align: center;
 }
 
-#artists-grid img{
+#artists-grid .portrait{
     width: 80%;
     object-fit: cover; 
     border-radius: 50%;
@@ -103,6 +111,15 @@ header {
 #artists-grid article:hover{
     scale: 102%;
     cursor:pointer;
+}
+
+.favorite {
+    width: 2em;
+    float:right;
+}
+
+.favorite:hover {
+    scale: 120%;
 }
 
 @media (min-width: 600px) {
@@ -217,6 +234,11 @@ dialog{
 
 #post-artist-dialog .user-btns {
     gap:5em;
+}
+
+/* ---- DELETE DIALOG ---- */
+#delete-artist-dialog .user-btns {
+    gap:15em;
 }
 
 /* ---- DIALOGS ----- */

@@ -24,6 +24,13 @@ app.get("/artists", async (req, res) => {
     res.json(jsonFile);
 });
 
+app.get("/artists/favorite", async (req, res) => {
+    const file = await fs.readFile("json/data.json");
+    const jsonFile = JSON.parse(file);
+    const favorites = jsonFile.filter(artist => artist.favorite);
+    res.json(favorites);
+});
+
 app.get("/artists/:id", async (req, res) => {
     const file = await fs.readFile("json/data.json");
     const jsonFile = JSON.parse(file);
@@ -81,5 +88,18 @@ app.delete("/artists/:id", async (req, res) => {
     
     fs.writeFile("json/data.json", JSON.stringify(updatedJsonData, null, 2));
 
-    res.json(jsonFile);
+    res.json(updatedJsonData);
+});
+
+app.patch("/artists/favorite/:id", async (req, res) => {
+  const file = await fs.readFile("json/data.json");
+  const jsonFile = JSON.parse(file);
+  const id = req.params.id;
+
+  let artist = jsonFile.find((target) => target.id === id )
+
+  artist.favorite = !artist.favorite;
+  fs.writeFile("json/data.json", JSON.stringify(jsonFile, null, 2));
+
+  res.json(jsonFile);
 });

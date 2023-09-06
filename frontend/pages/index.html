@@ -12,8 +12,16 @@
         <!-- search and filter -->
         <div class="header-grid">
             <input type="search" id="search" placeholder="Search for Artist" />
-            <img id="logo" src="../images/HarmonyHub.png" alt="">
+            <div id="sorting-grid">
+                <label for="show-favorites">Show favorites</label>
+                <label for="order-artists">Order artists: </label>
+                <input type="checkbox" name="showFavorites" id="show-favorites" />
+                <select name="orderArtists" id="order-artists">
+                    <option>Order from A-Z</option>
+                </select>
+            </div>
             <input type="button" id="show-post-artist-dialog" value ="Post new artist"/>
+            <img id="logo" src="../images/HarmonyHub.png" alt="logo">
         </div>
     </header>
     <main>
@@ -31,17 +39,18 @@
                 <span>Birthdate<p id="dialog-birthdate"></p></span>
                 <span>Active since<p id="dialog-active-since"></p></span>
                 <span>Labels<p id="dialog-labels"></p></span>
-                <span>Website <br><a href="website.website" id="dialog-website"></a></span>
+                <span>Website <br><a href="website.website" target="_blank" id="dialog-website"></a></span>
                 <span class="description">
                     Description<p id="dialog-description"></p>
                 </span>
+                <span id="dialog-id" style="display:none;"></span>
             </section>
             <div class="user-btns">
                 <span>		
                     <input type="button" id="show-update-dialog-btn" class="edit-btn" data-id="" value="Edit" />
                 </span>
                 <span>
-                    <input type="button" class="delete-btn" data-id="" value="Delete" />
+                    <input type="button" id="show-delete-dialog-btn" class="delete-btn" data-id="" value="Delete" />
                 </span>
             </div>
         </dialog>
@@ -99,6 +108,14 @@
                 <div class="user-btns">
                     <input type="submit" id="post-artist-btn-submit" value="Post artist" />
                     <input type="reset" value="Clear form" />
+                </div>
+            </form>
+        </dialog>
+        <dialog id="delete-artist-dialog">
+            <h2 id="delete-artist-header">Are you sure that you want to delete </h2>
+                <div class="user-btns">
+                    <input type="button" id="delete-artist-btn" value="Yes" />
+                    <input type="button" id="delete-artist-refuse-btn" value="No" />
                 </div>
             </form>
         </dialog>

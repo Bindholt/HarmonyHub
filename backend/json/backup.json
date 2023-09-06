@@ -9,7 +9,7 @@
     "website": "https://www.johnsmithmusic.com",
     "image": "https://i0.hippopx.com/photos/564/993/203/musician-street-music-urban-preview.jpg",
     "shortDescription": "Talented male musician known for his hit songs.",
-    "favorite": false
+    "favorite": true
   },
   {
     "id": "2",
@@ -21,7 +21,7 @@
     "website": "https://www.emilydavismusic.com/",
     "image": "https://p0.pxfuel.com/preview/539/681/140/musician-street-singer-portrait.jpg",
     "shortDescription": "Female singer-songwriter with a unique style.",
-    "favorite": true
+    "favorite": false
   },
   {
     "id": "3",
@@ -45,7 +45,7 @@
     "website": "https://www.sophiacartermusic.com",
     "image": "https://img.rawpixel.com/private/static/images/website/2022-05/fl15207242834-image-kpvzd3ex.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=aee45b5eaf7a65118bac1bb07230e8bd",
     "shortDescription": "Electro-pop artist with a captivating stage presence.",
-    "favorite": true
+    "favorite": false
   },
   {
     "id": "5",
@@ -81,7 +81,7 @@
     "website": "https://www.michaelturnermusic.com",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSGzQDHKahgh-Zcd34hDLXBRJ37gwGiGnrEw&usqp=CAU",
     "shortDescription": "Blues-rock guitarist and singer-songwriter.",
-    "favorite": false
+    "favorite": true
   },
   {
     "id": "8",
@@ -105,7 +105,7 @@
     "website": "https://www.danielgarciamusic.com",
     "image": "https://i2.pickpik.com/photos/157/861/168/guitarist-girl-music-artist-band-preview.jpg",
     "shortDescription": "Hip-hop artist known for his thought-provoking lyrics.",
-    "favorite": false
+    "favorite": true
   },
   {
     "id": "10",
@@ -129,7 +129,7 @@
     "website": "https://www.williammartinezmusic.com",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Abjos_%28Nigerian_musician%29.jpg",
     "shortDescription": "Alternative rock guitarist and vocalist.",
-    "favorite": false
+    "favorite": true
   },
   {
     "id": "12",
@@ -177,7 +177,7 @@
     "website": "https://www.ethanandersonmusic.com",
     "image": "https://p1.pxfuel.com/preview/843/12/838/girl-band-woman-band-concert-performance-black.jpg",
     "shortDescription": "Indie rock guitarist known for his energetic performances.",
-    "favorite": false
+    "favorite": true
   },
   {
     "id": "16",
@@ -189,7 +189,7 @@
     "website": "https://www.emmaclarkmusic.com",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToyF3Iq4D0xupfEM7WL5qp08CzhzdWwnEEeA&usqp=CAU",
     "shortDescription": "Female electronic pop artist with a captivating stage presence.",
-    "favorite": true
+    "favorite": false
   },
   {
     "id": "17",
@@ -237,6 +237,6 @@
     "website": "http://www.julievic.dk/mobilsite",
     "image": "https://www.skovdyrkerne.dk/fileadmin/_processed_/7/6/csm_Stor_hornugle_hoved__56b831f091.jpg",
     "shortDescription": "Ugle er en FLOT hornugle med ENDNU FLOTTERE musik",
-    "favorite": true
+    "favorite": false
   }
 ]
