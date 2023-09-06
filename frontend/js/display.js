@@ -1,6 +1,7 @@
 import { handleUpdateArtist } from "./submit.js";
 
 export function displayArtistsGrid(artistsArray) {
+    document.querySelector("#artists-grid").innerHTML = "";
     for (const artist of artistsArray) {
         const artistHTML = /*html */ `
             <article id="artist-id${artist.id}">
