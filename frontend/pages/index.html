@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarmonyHub</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <!-- search and filter -->
+        <div class="header-grid">
+            <input type="search" id="search" placeholder="Search for Artist" />
+            <img id="logo" src="../images/HarmonyHub.png" alt="">
+        </div>
+    </header>
+    <main>
+        <!-- Artists inserted with JS -->
+        <section id="artists-grid">
+        </section>
+
+        <!-- Display Artist Dialog -->
+        <dialog id="display-artist-dialog">
+            <button id="dialog-close-button" class="close-button">X</button>
+            <section id="dialog-grid">
+                <h2 id="dialog-name"></h2>
+                <span>Genres<p id="dialog-genre"></p></span>
+                <img src="" alt="Picture of artist" id="dialog-image">
+                <span>Birthdate<p id="dialog-birthdate"></p></span>
+                <span>Active since<p id="dialog-active-since"></p></span>
+                <span>Labels<p id="dialog-labels"></p></span>
+                <span>Website <br><a href="website.website" id="dialog-website"></a></span>
+                <span class="description">
+                    Description<p id="dialog-description"></p>
+                </span>
+            </section>
+            <div class="user-btns">
+                <span>		
+                    <input type="button" id="show-update-dialog-btn" class="edit-btn" data-id="" value="Edit" />
+                </span>
+                <span>
+                    <input type="button" class="delete-btn" data-id="" value="Delete" />
+                </span>
+            </div>
+        </dialog>
+
+        <!--Update artist dialog-->
+        <dialog id="update-artist-dialog">
+            <button id="update-dialog-close-button" class="close-button">X</button>
+            <h2>Update Artist</h2>
+            <form id="update-artist-form">
+                <label for="update-artist-name">Name:</label>
+                <input type="text" id="update-artist-name" name="name" required />
+                <label for="update-artist-genres">Genres:</label>
+                <input type="text" id="update-artist-genres" name="genres" required />
+                <label for="update-artist-birthdate">Birthdate:</label>
+                <input type="date" id="update-artist-birthdate" name="birthdate" min="1900-01-01" required />
+                <label for="update-artist-active-since">Active since:</label>
+                <input type="date" id="update-artist-active-since" name="activeSince" min="1900-01-01" required />
+                <label for="update-artist-labels">Labels:</label>
+                <input type="text" id="update-artist-labels" name="labels" required />
+                <label for="update-artist-website">Website:</label>
+                <input type="text" id="update-artist-website" name="website" required />
+                <label for="update-artist-image">Image:</label>
+                <input type="text" id="update-artist-image" name="image" required />
+                <label for="update-artist-description">Description:</label>
+                <textarea id="update-artist-description" name="description" required></textarea>
+                <input type="text" id="update-artist-id" name="id" style="display:none">
+                <div class="user-btns">
+                    <input type="submit" id="update-artist-btn-submit" value="Update artist" />
+                    <input type="reset" value="Clear form" />
+                </div>
+            </form>
+        </dialog>
+    </main>
+    <footer></footer>
+    <script type="module" src="../js/app.js"></script>
+</body>
+</html>

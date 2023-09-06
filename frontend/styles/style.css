@@ -1,0 +1,231 @@
+body {
+    background-color: rgb(49, 49, 49);
+    color: rgb(230, 230, 230);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 5em;
+    top: 0;
+    left: 0;
+    align-items: center;
+    padding: 1em 0 1em 0;
+    /* border-bottom: 1px solid black; */
+    background-color: rgb(20, 20, 20);
+    box-shadow: 0px 10px 3px rgb(20, 20, 20);
+    z-index: 1;
+}
+
+/* ----- HEADER ----- */
+#search {
+    width: 18em;
+    height: 3em;
+    border-radius: 1.5em;
+    padding-left: 1em;
+    margin-left: 1em;
+}
+
+#logo {
+    width: 10em;
+    justify-self: center;
+}
+
+.header-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+/* ----- GRID ----- */
+#artists-grid{
+    margin: 10em 1em 1em 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    justify-content: center;
+    vertical-align: center;
+}
+
+#artists-grid img{
+    width: 80%;
+    object-fit: cover; 
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto; 
+}
+
+#artists-grid article{
+    background-color: rgb(32, 32, 32);
+    box-shadow: 5px 5px 5px 5px rgb(32, 32, 32);
+    padding: 1em;
+}
+
+#artists-grid article h3{
+    text-align: center;
+}
+
+#artists-grid button{
+    width: 9em;
+    min-height: 2em;
+    background-color: #649c63;
+    border-radius: 1em;
+    cursor: pointer;
+    border: 1px solid black;
+    filter: drop-shadow(0 0 2px black);
+}
+#artists-grid button:hover{
+    scale: 101%;
+}
+#artists-grid article:hover{
+    scale: 102%;
+    cursor:pointer;
+}
+
+@media (min-width: 600px) {
+    #artists-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 900px){
+    #artists-grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width: 1200px) {
+    #artists-grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ----- DISPLAY DIALOG -----*/
+dialog{
+    padding: 50px;
+    width: 50vw;
+    border-radius: 1em;
+    border: 0px;
+    box-shadow: 5px 5px 5px 5px rgb(32, 32, 32);
+    background-color: rgb(70, 70, 70);
+    color: rgb(225, 225, 225)
+}
+
+#dialog-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#dialog-grid h2 {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+.description {
+    grid-column: 1 / -1;
+}
+
+#dialog-grid img {
+    height: 15em;
+    grid-column: 2 / -1; /* Start from the second column and span to the last column */
+    grid-row: 2 / 8; /* Span from the second row to the eighth row */
+    justify-content: center;
+    vertical-align: center;
+    margin: 0 auto; 
+}
+
+#dialog-grid span {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom:0;
+    margin-top:1em;
+}
+
+#dialog-grid p {
+    font-size: 15px;
+    font-weight:100;
+    margin-top: 0;
+}
+
+#display-artist-dialog .user-btns {
+    gap:15em;
+}
+
+
+/* ---- UPDATE DIALOG ---- */
+
+#update-artist-dialog {
+    width: 20em;
+}
+
+#update-artist-dialog h2{
+    text-align: center;
+}
+
+#update-artist-form {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#update-artist-form input {
+    width: 10em;
+}
+
+#update-artist-dialog .user-btns {
+    gap:5em;
+}
+
+
+/* ---- DIALOGS ----- */
+
+.user-btns {
+    margin-top:2em;
+    margin-bottom: 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+}
+
+.user-btns input {
+    background-color: rgb(27, 27, 27);
+    color: rgb(230, 230, 230);
+    padding:0.2em 3em 0.2em 3em;
+    border: 0;
+    border-radius: 1em;
+    box-shadow: 5px 5px 5px 5px rgb(32, 32, 32);
+}
+
+.user-btns input:hover {
+    background-color: rgb(40, 40, 40);
+    color: rgb(230, 230, 230);
+    padding:0.2em 3em 0.2em 3em;
+    border: 0;
+    border-radius: 1em;
+    box-shadow: 5px 5px 5px 5px rgb(40, 40, 40);
+    cursor: pointer;
+    scale:102%
+}
+
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: white;
+  background-color: rgb(54, 2, 2);
+  box-shadow: 2px 2px 5px 2px rgb(40, 40, 40);
+  border: none;
+  border-radius: 0.5em;
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.close-button:hover {
+  background-color: rgb(70, 28, 28);
+} 
