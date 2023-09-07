@@ -57,7 +57,7 @@ header {
     box-shadow: 2px 2px 2px 2px rgb(81, 81, 81);
 }
 
-.header-grid input:hover {
+.header-grid input[type="button"]:hover {
     background-color: rgb(40, 40, 40);
     color: rgb(230, 230, 230);
     padding:0.2em 3em 0.2em 3em;

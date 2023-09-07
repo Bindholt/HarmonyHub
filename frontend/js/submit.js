@@ -1,6 +1,7 @@
 import { displayArtistsGrid, closeAllDialogs, toggleFavoriteImage } from "./display.js";
 import { updateArtist, postArtist, deleteArtist, updateArtistFavorite } from "./rest-services.js";
 import { showToastMessage } from "./toast-messages.js";
+import { setArtists } from "./setArtists.js";
 
 export async function handleUpdateArtist(event) {
     event.preventDefault();
@@ -16,13 +17,14 @@ export async function handleUpdateArtist(event) {
         website: form.website.value,
         image: form.image.value,
         shortDescription: form.description.value,
-        favorite:false,
+        favorite: document.querySelector("#update-artist-favorite").checked,
     }
     const response = await updateArtist(JSON.stringify(artistData, null, 2));
     
     if (response.ok) {
         const artists = await response.json(); //response.json() returns an array of all artists.
-        displayArtistsGrid(artists);
+        setArtists(artists);
+        displayArtistsGrid();
         showToastMessage("Artist updated successfully!", "success");
         closeAllDialogs();
     } else {
@@ -50,7 +52,8 @@ export async function handlePostArtist(event) {
     
     if (response.ok) {
         const artists = await response.json(); //response.json() returns an array of all artists.
-        displayArtistsGrid(artists);
+        setArtists(artists);
+        displayArtistsGrid();
         showToastMessage("Artist posted successfully!", "success");
         closeAllDialogs();
     } else {
@@ -65,7 +68,8 @@ export async function handleDeleteArtist() {
     
     if (response.ok) {
         const artists = await response.json(); //response.json() returns an array of all artists.
-        displayArtistsGrid(artists);
+        setArtists(artists);
+        displayArtistsGrid();
         showToastMessage("Artist deleted successfully!", "success");
         closeAllDialogs();
     } else {
@@ -75,10 +79,15 @@ export async function handleDeleteArtist() {
 }
 
 export async function toggleFavorite(target) {
+    console.log("this");
     const id = target.dataset.id;
     const response = await updateArtistFavorite(id);
 
     if(response.ok) {
+        const artists = await response.json(); //response.json() returns an array of all artists.
+        console.log(artists);
+        setArtists(artists);
+        displayArtistsGrid();
         toggleFavoriteImage(target);
     } else {
         showToastMessage("Error: Something went wrong", "error");

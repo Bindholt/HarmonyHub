@@ -1,7 +1,17 @@
 import { showUpdateArtistDialog, showDeleteArtistDialog, closeAllDialogs, showFavorites} from "./display.js";
 import { handlePostArtist, handleUpdateArtist, handleDeleteArtist } from "./submit.js";
+import { searchByName, sortArtists } from "./search.js";
 
 export function setEventListeners() {
+
+    document.querySelector("#search").addEventListener("keyup", (event) => {
+        searchByName(event);
+    });
+
+    document.querySelector("#order-artists").addEventListener("change", (event) => {
+        sortArtists(event);
+    });
+
     document.querySelector("#show-post-artist-dialog").addEventListener("mouseup", () => {
         document.querySelector("#post-artist-form").reset();
         document.querySelector("#post-artist-dialog").showModal();

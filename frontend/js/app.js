@@ -1,4 +1,4 @@
-import { handleDisplayArtistsGrid } from "./display.js";
+import { handleDisplayArtistsGrid } from "./setArtists.js";
 import { setEventListeners } from "./event-listeners.js";
 
 window.addEventListener("load", init);

@@ -1,20 +1,32 @@
 import { setDisplayDialogEventListeners } from "./event-listeners.js";
 import { toggleFavorite } from "./submit.js";
-import { getArtists, getArtistsFavorited } from "./rest-services.js";
+import { artists, handleDisplayArtistsGrid, handleDisplayArtistsGridFavorites } from "./setArtists.js";
 
-export async function handleDisplayArtistsGrid() {
-    const response = await getArtists();
-    const artists = await response.json();
-    displayArtistsGrid(artists);
+export function displayArtistsGrid() {
+    document.querySelector("#artists-grid").innerHTML = "";
+    for (const artist of artists) {
+        const favoritedImage = artist.favorite ? "../images/favorited.png" : "../images/not-favorited.png";
+        const artistHTML = /*html */ `
+            <article id="artist-id${artist.id}">
+                <div>
+                    <img data-id="${artist.id}" data-favorite="${artist.favorite}" id="favorite${artist.id}" class="favorite" src="${favoritedImage}" alt="star" />
+                    <h3><span>${artist.name}</span></h3>
+                    <img class="portrait" src="${artist.image}" alt="Image of artist" />
+                </div>        
+            </article>
+        `
+        document.querySelector("#artists-grid").insertAdjacentHTML("beforeend", artistHTML);
+        document.querySelector("#artist-id" + artist.id).addEventListener("mouseup", () => {
+            showDisplayArtistDialog(artist);
+        });
+        document.querySelector("#favorite" + artist.id).addEventListener("mouseup", (event) => {
+            event.stopPropagation();
+            toggleFavorite(event.target);
+        });
+    }
 }
 
-async function handleDisplayArtistsGridFavorites() {
-    const response = await getArtistsFavorited();
-    const artists = await response.json();
-    displayArtistsGrid(artists);
-}
-
-export function displayArtistsGrid(artistsArray) {
+export function displayArtistsGridBySearch(artistsArray) {
     document.querySelector("#artists-grid").innerHTML = "";
     for (const artist of artistsArray) {
         const favoritedImage = artist.favorite ? "../images/favorited.png" : "../images/not-favorited.png";
@@ -37,7 +49,6 @@ export function displayArtistsGrid(artistsArray) {
         });
     }
 }
-//
 
 function showDisplayArtistDialog(artist) {
     closeAllDialogs();
@@ -52,6 +63,7 @@ function showDisplayArtistDialog(artist) {
     document.querySelector("#dialog-image").src = artist.image;
     document.querySelector("#dialog-description").innerHTML = artist.shortDescription;
     document.querySelector("#dialog-id").innerHTML = artist.id;
+    document.querySelector("#dialog-favorite").checked = artist.favorite;
 
     setDisplayDialogEventListeners();
 
@@ -71,6 +83,7 @@ export function showUpdateArtistDialog() {
     document.querySelector("#update-artist-image").value = document.querySelector("#dialog-image").src;
     document.querySelector("#update-artist-description").value = document.querySelector("#dialog-description").innerHTML;
     document.querySelector("#update-artist-id").value = document.querySelector("#dialog-id").innerHTML;
+    document.querySelector("#update-artist-favorite").checked = document.querySelector("#dialog-favorite").checked;
 
     updateDialog.showModal();
 }
@@ -108,4 +121,6 @@ export function showFavorites(event) {
     } else {
         handleDisplayArtistsGrid();
     }
+        
+    document.querySelector("#order-artists").value = "not-sorted";
 }   

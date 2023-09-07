@@ -17,7 +17,11 @@
                 <label for="order-artists">Order artists: </label>
                 <input type="checkbox" name="showFavorites" id="show-favorites" />
                 <select name="orderArtists" id="order-artists">
-                    <option>Order from A-Z</option>
+                    <option value="not-sorted"></option>
+                    <option value="name-ascending">Name A-Z</option>
+                    <option value="name-descending">Name Z-A</option>
+                    <option value="active-since-ascending">Active since (Highest to lowest)</option>
+                    <option value="active-since-descending">Active since (Lowest to highest)</option>
                 </select>
             </div>
             <input type="button" id="show-post-artist-dialog" value ="Post new artist"/>
@@ -44,6 +48,7 @@
                     Description<p id="dialog-description"></p>
                 </span>
                 <span id="dialog-id" style="display:none;"></span>
+                <input type="checkbox" id="dialog-favorite" style="display:none;"/>
             </section>
             <div class="user-btns">
                 <span>		
@@ -76,7 +81,8 @@
                 <input type="text" id="update-artist-image" name="image" required />
                 <label for="update-artist-description">Description:</label>
                 <textarea id="update-artist-description" name="description" required></textarea>
-                <input type="text" id="update-artist-id" name="id" style="display:none">
+                <input type="text" id="update-artist-id" name="id" style="display:none" /> 
+                <input type="checkbox" id="update-artist-favorite" name="favorite" style="display:none" />
                 <div class="user-btns">
                     <input type="submit" id="update-artist-btn-submit" value="Update artist" />
                     <input type="reset" value="Clear form" />
